@@ -2,14 +2,14 @@
 
 using namespace std;
 
-bool validateCard(string cardNumber); 
+bool validateCard(string cardNum); 
 
 int main() {
-    string cardNumber;
+    string cardNum;
     cout << "Enter card number: ";
-    cin >> cardNumber;
+    cin >> cardNum;
 
-    if (validateCard(cardNumber)) {
+    if (validateCard(cardNum)) {
         cout << "Valid." << endl;
     } else {
         cout << "Invalid." << endl;
@@ -18,11 +18,11 @@ int main() {
     return 0;
 }
 
-bool validateCard(string cardNumber){
+bool validateCard(string cardNum){
     int sum = 0;
     bool alternate = false;
-    for (int i = cardNumber.length() - 1; i >= 0; i--) {
-        int n = cardNumber[i] - '0';
+    for (int i = cardNum.length() - 1; i >= 0; i--) {
+        int n = cardNum[i] - '0';
         if (alternate) {
             n *= 2;
             if (n > 9) {
